@@ -53,15 +53,4 @@ Packer.toBuffer(doc).then((buffer) => {
     fs.writeFileSync("My Document.docx", buffer);
 });
 
-const inputDocx = 'My Document.docx';
-const outputHtml = 'output.html';
-
-fs.promises.readFile(inputDocx, 'binary')
-  .then(data => mammoth.convertToHtml({ buffer: Buffer.from(data, 'binary') }))
-  .then(result => fs.promises.writeFile(outputHtml, result.value))
-  .then(() => {
-    console.log(`O arquivo HTML foi gerado em ${outputHtml}`);
-  })
-  .catch(error => {
-    console.error(`Erro na conversão: ${error}`);
-  });
+0
